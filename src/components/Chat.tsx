@@ -22,8 +22,8 @@ interface ChatProps {
   onClose: () => void;
 }
 
-const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app/";
-const WS_BASE = "ws://techni-zlecenia-4wdh.shuttle.app/";
+const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app";
+const WS_BASE = "ws://techni-zlecenia-4wdh.shuttle.app";
 
 export function Chat({ currentUserId, token, onClose }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);

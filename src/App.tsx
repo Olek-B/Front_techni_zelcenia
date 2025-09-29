@@ -64,7 +64,7 @@ const useAuth = () => {
 };
 
 // API Base URL - adjust this to your backend URL
-const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app/";
+const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app";
 
 // Auth Provider Component
 function AuthProvider({ children }: { children: React.ReactNode }) {

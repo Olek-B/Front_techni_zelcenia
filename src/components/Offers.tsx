@@ -31,7 +31,7 @@ interface OffersProps {
   token: string;
 }
 
-const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app/";
+const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app";
 
 export function Offers({ currentUserId, token }: OffersProps) {
   const [myOffers, setMyOffers] = useState<Offer[]>([]);

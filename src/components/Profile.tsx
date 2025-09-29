@@ -34,7 +34,7 @@ interface ProfileProps {
   onClose: () => void;
 }
 
-const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app/";
+const API_BASE = "https://techni-zlecenia-4wdh.shuttle.app";
 
 export function Profile({
   userId,

@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        @apply text-gray-900 bg-white font-sans;
+    }
+
+    body {
+        @apply min-w-[320px] min-h-screen m-0;
+    }
+
+    * {
+        @apply box-border;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+    }
+
+    .btn-secondary {
+        @apply bg-gray-200 hover:bg-gray-300 text-gray-900 px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
+    }
+
+    .input-field {
+        @apply appearance-none rounded-md block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+    }
+
+    .card {
+        @apply bg-white overflow-hidden shadow-lg rounded-lg border border-gray-200;
+    }
+
+    .card-header {
+        @apply px-6 py-4 border-b border-gray-200;
+    }
+
+    .card-body {
+        @apply px-6 py-4;
+    }
+
+    .card-footer {
+        @apply px-6 py-4 bg-gray-50 border-t border-gray-200;
+    }
+}
+
+@layer utilities {
+    .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .box-shadow-soft {
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .box-shadow-medium {
+        box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .gradient-secondary {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .gradient-success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Hover effects for interactive elements */
+.hover-lift {
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Focus styles for accessibility */
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+}
+
+/* Message bubble styles for chat */
+.message-bubble {
+    @apply max-w-xs lg:max-w-md px-4 py-2 rounded-lg break-words;
+}
+
+.message-sent {
+    @apply bg-indigo-600 text-white ml-auto;
+}
+
+.message-received {
+    @apply bg-gray-200 text-gray-900;
+}
+
+/* Form validation styles */
+.form-error {
+    @apply border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500;
+}
+
+.form-success {
+    @apply border-green-300 text-green-900 placeholder-green-300 focus:ring-green-500 focus:border-green-500;
+}
+
+/* Status badges */
+.status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-accepted {
+    @apply bg-green-100 text-green-800;
+}
+
+.status-rejected {
+    @apply bg-red-100 text-red-800;
+}
+
+/* Responsive image handling */
+.responsive-img {
+    @apply w-full h-auto object-cover;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    .dark-mode {
+        @apply bg-gray-900 text-white;
+    }
+
+    .dark-mode .card {
+        @apply bg-gray-800 border-gray-700;
+    }
+
+    .dark-mode .input-field {
+        @apply bg-gray-800 border-gray-600 text-white placeholder-gray-400;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        @apply text-black bg-white;
+    }
+}
